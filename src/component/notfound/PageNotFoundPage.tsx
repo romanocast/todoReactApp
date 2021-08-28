@@ -2,7 +2,7 @@ import React from 'react';
 
 const PageNotFoundPage: React.FC = () => {
     return (
-        <span>PageNotFoundPage</span>
+        <h1>PageNotFoundPage</h1>
     );
 }
 
