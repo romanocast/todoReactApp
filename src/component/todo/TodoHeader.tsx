@@ -15,6 +15,7 @@ const TodoHeader: React.FC = () => {
           </Typography>
           <Button color="inherit">ToDo</Button>
           <Button color="inherit">About</Button>
+          <Button color="inherit">Testing</Button>
         </Toolbar>
       </AppBar>
     
