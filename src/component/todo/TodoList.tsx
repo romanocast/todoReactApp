@@ -1,14 +1,18 @@
 import React from 'react'
 import { List } from '@material-ui/core'
+
 import TodoListItem from './TodoListItem'
-import todoList from '../../repository/simple_todo_repository'
+import { useStoreState } from "../../store/StoreModel";
 
 const TodoList: React.FC = () => {
-    return (
+    const todoList = useStoreState(state => state.todoModel.todos)
+    return(
         <List>
-            {todoList.map((todo) =>
-                {return <TodoListItem todo={todo}/>}
-                )}
+            {todoList.map((todo) => 
+                { return <TodoListItem key={todo.id} todo={todo}/> }
+            )}
         </List>
     )
 }
+
+export default TodoList
