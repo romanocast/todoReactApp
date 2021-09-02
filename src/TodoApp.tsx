@@ -5,8 +5,10 @@ import TodoHeader from './component/todo/TodoHeader';
 import PageNotFoundPage from './component/notfound/PageNotFoundPage';
 import { useLocation } from 'react-router-dom';
 import AboutPage from './component/about/AboutPage';
+import { useTodoInitDataHook } from './model/todo_data_init_hook';
 
 const TodoApp: React.FC = () => {
+  useTodoInitDataHook()
   let body = <PageNotFoundPage/>
 
   /* ginge auch let location = useLocation()
