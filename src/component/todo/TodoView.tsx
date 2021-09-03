@@ -1,9 +1,12 @@
 import React from "react"
+import TodoForm from "./TodoForm"
 
 
 
 const TodoView: React.FC = () => {
     return (
-        <h1>TodoView</h1>
+        <TodoForm/>
     )
 }
+
+export default TodoView

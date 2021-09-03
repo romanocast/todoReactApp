@@ -1,7 +1,7 @@
 import { Action, Thunk, Computed, action, thunk, computed} from 'easy-peasy'
 
 import Todo from './todo'
-import todos from '../repository/simple_todo_repository'
+import todoService from'../service/fakeTodoService'
 import { CallToActionSharp } from '@material-ui/icons'
 
 export interface TodoModel {
@@ -31,16 +31,17 @@ const todoModel: TodoModel = {
         )
     }),
 
-    delete: thunk(async(actions, todo: Todo) => {
-        await todoService.deleteToDo(todo).then(() => {
-            actions._delete(todo)
-        })
+    delete: thunk(async (actions, todo) => {
+        await todoService.deleteTodo(todo).then(
+            () => { actions._delete(todo) }
+        )
     }),
   
-    toggleCompleted: thunk(async(actions, todo: Todo) => {
-        todo.completed =!todo.completed
-        const updatedTodo = await todoService.updateTodo(todo)
-        actions._replace(updateTodo)
+    toggleCompleted: thunk(async (actions, todo: Todo) => {
+        todo.completed = !todo.completed
+        await todoService.updateTodo(todo).then(
+            (todo: Todo) => { actions._replace(todo) }
+        )
     }),
     //Actions
     _initData: action((state, todoList) => {
@@ -49,21 +50,21 @@ const todoModel: TodoModel = {
     }),
 
     _delete: action((state, todo) => {
-        for(var i = 0; i < state.todos.length; i++) {
-            if(state.todos[i].id === todo.id){
-                state.todos.splice(i, 1);
+        for( var i = 0; i < state.todos.length; i++) { 
+            if ( state.todos[i].id === todo.id) {
+                state.todos.splice(i, 1); 
             }
         }
+        
     }),
 
-    _replace: action(state, todo) => {
-        for(var i = 0; i < state.todos.length; i++) {
-            if(state.todos[i].id === todoModel.id){
-                state.todos[i] = {...todo}
-                //copy todo so state changes
+    _replace: action((state, todo) => {
+        for( var i = 0; i < state.todos.length; i++) { 
+            if ( state.todos[i].id === todo.id) {
+                state.todos[i] = {...todo} // Copy todo so state changes
             }
-        }
-    }
+         }
+    }),
     
 }
 

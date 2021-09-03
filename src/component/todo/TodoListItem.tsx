@@ -14,7 +14,6 @@ import { PersonPinCircleSharp } from '@material-ui/icons'
 import { useStoreActions } from "../../store/StoreModel";
 
 
-
 interface TodoListItemProps {
     todo: Todo;
 }

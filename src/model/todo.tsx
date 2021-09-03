@@ -1,4 +1,4 @@
-export type UniqueKey = string | number | undefined
+export type UniqueKey = string | number | null
 
 export default interface Todo {
     id: UniqueKey,
@@ -12,7 +12,7 @@ export class TodoImpl implements Todo {
     completed: boolean
 
     constructor(title: string) {
-        this.id = undefined;
+        this.id = null;
         this.title = title
         this.completed = false
     }

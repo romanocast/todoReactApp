@@ -3,17 +3,17 @@ import Todo from '../model/todo'
 const todoList: Todo[] =[
     {
         "id": 4,
-        "title": "Do this",
+        "title": "Bring trash out",
         "completed": false
     },
     {
         "id": 3,
-        "title": "Do that",
+        "title": "sort the trash for valueable items",
         "completed": true
     },
     {
         "id": 2,
-        "title": "Do it again Sam",
+        "title": "look at the todo list",
         "completed": false
     },
     {

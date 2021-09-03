@@ -13,9 +13,7 @@ const TodoList: React.FC = () => {
              {/* use the data to create TodoListItem
                 Always use key={todo.id} because Lists need a unique key
             */}
-            {todoList.map((todo) => 
-                { return <TodoListItem key={todo.id} todo={todo}/> }
-            )}
+            {todoList.map((todo) => { return <TodoListItem key={todo.id} todo={todo}/> })}
         </List>
     )
 }

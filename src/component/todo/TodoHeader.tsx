@@ -23,11 +23,6 @@ const TodoHeader: React.FC = () => {
                   >About</Button>
         </Toolbar>
       </AppBar>
-    
-
-
-
-      
     );
 }
 const useStyles = makeStyles((theme: Theme) =>

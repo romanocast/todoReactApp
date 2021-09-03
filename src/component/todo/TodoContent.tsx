@@ -1,6 +1,7 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
 import TodoList from "./TodoList";
+import TodoView from "./TodoView";
 
 const TodoContent: React.FC = () => {
     return(
@@ -9,8 +10,9 @@ const TodoContent: React.FC = () => {
                 <TodoList/>
             </Grid>
             <Grid item xs={12} sm={8}>
-                <TodoList/>
+                <TodoView/>
             </Grid>
         </Grid>
     )
 }
+export default TodoContent

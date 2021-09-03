@@ -8,12 +8,12 @@ import store from './store/StoreModel'
 
 
 ReactDOM.render(
-<StoreProvider store={store}>
-  <React.StrictMode>
-    <Router>
-      <TodoApp />
-    </Router>
-  </React.StrictMode>
+  <StoreProvider store={store}>
+    <React.StrictMode>
+      <Router>
+        <TodoApp />
+      </Router>
+    </React.StrictMode>
   </StoreProvider>,
   document.getElementById('root')
 );

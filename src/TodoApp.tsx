@@ -21,7 +21,10 @@ const TodoApp: React.FC = () => {
   }
   return (
     
-   <AppLayout header= {<TodoHeader/>} body={body}/>
+   <AppLayout 
+      header= {<TodoHeader/>} 
+      body={body}
+    />
   );
 }
 export default TodoApp

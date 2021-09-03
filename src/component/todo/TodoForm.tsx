@@ -9,3 +9,5 @@ const TodoForm: React.FC<TodoFormProps> = (props) => {
         <span>TodoForm</span>
     )
 }
+
+export default TodoForm
