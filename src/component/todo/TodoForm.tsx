@@ -12,14 +12,20 @@ interface TodoFormProps {
 
 }
 
-const TodoForm: React.FC<TodoFormProps> = (props) => {
+const TodoForm: React.FC<TodoFormProps> = ({
+    todo, submitText, submitFunction, resetFormAfterSubmit}) => {
     return(
         //Formink has ast least two properties
         // initalValues and on SUbmit
         <Formik
-            initialValues={{title: ''}}
-            onSubmit={() => {}}
-            validationSchema={todoValidationSchema}
+            initialValues={{title: todo.title}}
+            onSubmit={(values, {resetForm}) => {
+                todo.title = values.title
+                submitFunction(todo)
+                if(resetFormAfterSubmit) {
+                    resetForm()
+                }
+            }}
         >
             {
                 //Formink want a function wich return the 
@@ -48,7 +54,7 @@ const TodoForm: React.FC<TodoFormProps> = (props) => {
                                         <Button
                                             type='submit'
                                             variant='contained' color='primary' fullWidth
-                                        >Create new Todo
+                                        >{submitText}
                                         </Button>
                                     </Grid>
                                 </Grid>

@@ -5,7 +5,10 @@ import TodoForm from "./TodoForm"
 
 const TodoView: React.FC = () => {
     return (
-        <TodoForm/>
+        <>
+        <NewTodo />
+        <EditTodo />
+        </>
     )
 }
 
