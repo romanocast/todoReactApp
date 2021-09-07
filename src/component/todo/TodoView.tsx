@@ -1,5 +1,7 @@
 import React from "react"
+import NewTodo from "./NewTodo"
 import TodoForm from "./TodoForm"
+import EditTodo from "./EditTodo"
 
 
 

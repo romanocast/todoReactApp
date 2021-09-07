@@ -23,3 +23,4 @@ const EditTodo: React.FC<EditTodoProps> = (props) => {
         </>
     )
 }
+export default EditTodo
