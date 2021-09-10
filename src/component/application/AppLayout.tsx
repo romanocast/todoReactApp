@@ -1,12 +1,12 @@
 import { Grid } from '@material-ui/core';
 import React, { ReactElement } from 'react';
 
-interface AppLayoutProps {
+interface AppProps {
     header: ReactElement
     body: ReactElement
 }
 
-const AppLayout: React.FC<AppLayoutProps> = (props: AppLayoutProps) => {
+const AppLayout: React.FC<AppProps> = (props: AppProps) => {
     return (
         //<h1>AppLayout</h1>
         <Grid container direction="column">

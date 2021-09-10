@@ -10,8 +10,7 @@ import {
  } from '@material-ui/core'
 import Todo from '../../model/todo'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
-import { PersonPinCircleSharp } from '@material-ui/icons'
-import { useStoreActions } from "../../store/StoreModel";
+import { useStoreActions, useStoreState } from "../../store/StoreModel";
 
 
 interface TodoListItemProps {
@@ -23,6 +22,8 @@ const TodoListItem: React.FC<TodoListItemProps> = ({todo}) => {
      const deleteTodo = useStoreActions(actions => actions.todoModel.delete)
      // 3) Retrieve the toggle action
      const toggleCompleted = useStoreActions(actions => actions.todoModel.toggleCompleted)
+     const selectedTodo = useStoreState(state => state.todoModel.selectedTodo)
+    const setSelectedTodo = useStoreActions(actions => actions.todoModel.setSelectedTodo)
     return (
         <ListItem >
             <ListItemIcon>
@@ -34,7 +35,12 @@ const TodoListItem: React.FC<TodoListItemProps> = ({todo}) => {
                     onClick={() => { toggleCompleted(todo) }}
                 />
             </ListItemIcon>
-            <ListItemText primary={todo.title} />
+            <Typography
+                noWrap
+                onClick={() => { setSelectedTodo(todo) }}
+                >
+                {todo.title}
+            </Typography>
             <ListItemSecondaryAction>
                 <IconButton
                     edge="end"

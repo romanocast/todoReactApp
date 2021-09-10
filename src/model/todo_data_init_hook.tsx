@@ -6,8 +6,7 @@ const useTodoInitDataHook = () => {
     useEffect(
         () => {
             initData()
-            console.log('initTodoModelHook() called')
-            //eslint-disable-next-line
+           
         }, [] //only run the effect once
     )
 }

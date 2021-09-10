@@ -18,14 +18,14 @@ const TodoForm: React.FC<TodoFormProps> = ({
         //Formink has ast least two properties
         // initalValues and on SUbmit
         <Formik
-            initialValues={{title: todo.title}}
-            onSubmit={(values, {resetForm}) => {
-                todo.title = values.title
-                submitFunction(todo)
-                if(resetFormAfterSubmit) {
-                    resetForm()
-                }
-            }}
+        enableReinitialize={true}
+        initialValues={{title: todo.title}}
+        validationSchema={todoValidationSchema}
+        onSubmit={(values, {resetForm}) => {
+            todo.title = values.title
+            submitFunction(todo)
+            if (resetFormAfterSubmit) { resetForm() }
+        }}
         >
             {
                 //Formink want a function wich return the 

@@ -1,12 +1,12 @@
 import { createMuiTheme } from '@material-ui/core/styles'
-import {yellow, orange, pink, lightGreen} from '@material-ui/core/colors'
+import {yellow, orange, pink, lightGreen, cyan } from '@material-ui/core/colors'
 
 export const theme = createMuiTheme()
 
 export const customTheme = createMuiTheme({
     palette: {
         primary: {
-            main: pink[500],
+            main: cyan[500],
         },
         secondary: {
             main: lightGreen[500]
