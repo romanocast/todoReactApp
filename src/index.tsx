@@ -6,11 +6,11 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import {StoreProvider} from 'easy-peasy'
 import store from './store/StoreModel'
 import {ThemeProvider} from '@material-ui/core'
-import {theme, customTheme, darkTheme} from './theme/materialui_themes'
+import {theme, customTheme, darkTheme, gaggiTheme, purpTheme} from './theme/materialui_themes'
 
 
 ReactDOM.render(
-  <ThemeProvider theme={customTheme}>
+  <ThemeProvider theme={gaggiTheme}>
     <StoreProvider store={store}>
       <React.StrictMode>
         <Router>
