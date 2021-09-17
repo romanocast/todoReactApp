@@ -10,7 +10,7 @@ import {theme, customTheme, darkTheme, gaggiTheme, purpTheme} from './theme/mate
 
 
 ReactDOM.render(
-  <ThemeProvider theme={gaggiTheme}>
+  <ThemeProvider theme={purpTheme}>
     <StoreProvider store={store}>
       <React.StrictMode>
         <Router>
